@@ -37,6 +37,10 @@ class UNService: NSObject {
         content.body = "Your timer is all done. Yay!"
         content.sound = .default()
         content.badge = 1
+        
+        if let attachment = notificationAttachment(for: .timer) {
+            content.attachments = [attachment]
+        }
         //Repeat can happen only if timeInterval is >= 60
         //Kylo Loko also says that if interval is < 60 and we set reapts to true it will crash(TBC)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
@@ -53,7 +57,9 @@ class UNService: NSObject {
         content.body = "It is now the future!"
         content.sound = .default()
         content.badge = 1
-        
+        if let attachment = notificationAttachment(for: .date) {
+            content.attachments = [attachment]
+        }
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         let request = UNNotificationRequest(identifier: "userNotification.date", content: content, trigger: trigger)
         unCenter.add(request)
@@ -65,9 +71,29 @@ class UNService: NSObject {
         content.body = "Welcome back you silly coder you!"
         content.sound = .default()
         content.badge = 1
-        
+        if let attachment = notificationAttachment(for: .location) {
+            content.attachments = [attachment]
+        }
         let request = UNNotificationRequest(identifier: "userNotification.location", content: content, trigger: nil)
         unCenter.add(request)
+    }
+    
+    func notificationAttachment(for id: NotificationAttachmentID) -> UNNotificationAttachment? {
+        var imageName: String
+        switch id {
+        case .timer: imageName = "TimeAlert"
+        case .date: imageName = "DateAlert"
+        case .location: imageName = "LocationAlert"
+        }
+        
+        guard let url = Bundle.main.url(forResource: imageName, withExtension: "png") else { return nil }
+        do {
+            let attachment = try UNNotificationAttachment(identifier: id.rawValue, url: url, options: [:])
+            return attachment
+        } catch {
+            return nil
+        }
+        return nil
     }
 }
 
