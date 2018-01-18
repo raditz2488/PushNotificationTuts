@@ -37,7 +37,6 @@ class UNService: NSObject {
         content.body = "Your timer is all done. Yay!"
         content.sound = .default()
         content.badge = 1
-        
         //Repeat can happen only if timeInterval is >= 60
         //Kylo Loko also says that if interval is < 60 and we set reapts to true it will crash(TBC)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
@@ -57,7 +56,6 @@ class UNService: NSObject {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         let request = UNNotificationRequest(identifier: "userNotification.date", content: content, trigger: trigger)
-        
         unCenter.add(request)
     }
     
