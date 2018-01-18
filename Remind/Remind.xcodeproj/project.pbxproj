@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8101358F20106CEF00FE362F /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8101358E20106CEF00FE362F /* AlertService.swift */; };
 		810135912010A9D600FE362F /* CLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810135902010A9D600FE362F /* CLService.swift */; };
+		8101359320111DCE00FE362F /* NotificationAttachmentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8101359220111DCE00FE362F /* NotificationAttachmentID.swift */; };
 		818EE28C200D24A000FBFADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE28B200D24A000FBFADC /* AppDelegate.swift */; };
 		818EE28E200D24A000FBFADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE28D200D24A000FBFADC /* ViewController.swift */; };
 		818EE291200D24A000FBFADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EE28F200D24A000FBFADC /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		8101358E20106CEF00FE362F /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		810135902010A9D600FE362F /* CLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLService.swift; sourceTree = "<group>"; };
+		8101359220111DCE00FE362F /* NotificationAttachmentID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAttachmentID.swift; sourceTree = "<group>"; };
 		818EE288200D24A000FBFADC /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818EE28B200D24A000FBFADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818EE28D200D24A000FBFADC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		818EE2A0200D24D200FBFADC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8101359220111DCE00FE362F /* NotificationAttachmentID.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8101359320111DCE00FE362F /* NotificationAttachmentID.swift in Sources */,
 				810135912010A9D600FE362F /* CLService.swift in Sources */,
 				818EE2A4200D266F00FBFADC /* ShadowView.swift in Sources */,
 				818EE28E200D24A000FBFADC /* ViewController.swift in Sources */,
