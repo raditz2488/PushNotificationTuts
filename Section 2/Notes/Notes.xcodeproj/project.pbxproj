@@ -14,6 +14,9 @@
 		8123919B20148592006C6B1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8123919920148592006C6B1E /* LaunchScreen.storyboard */; };
 		812391A820148950006C6B1E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391A720148950006C6B1E /* Note.swift */; };
 		812391AA20148A03006C6B1E /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391A920148A03006C6B1E /* AlertService.swift */; };
+		812391AE20149440006C6B1E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812391AD20149440006C6B1E /* CloudKit.framework */; };
+		812391B020149576006C6B1E /* CKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391AF20149576006C6B1E /* CKService.swift */; };
+		812391B22014B011006C6B1E /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391B12014B011006C6B1E /* NotesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		8123919C20148592006C6B1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		812391A720148950006C6B1E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		812391A920148A03006C6B1E /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		812391AB2014942A006C6B1E /* Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notes.entitlements; sourceTree = "<group>"; };
+		812391AD20149440006C6B1E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		812391AF20149576006C6B1E /* CKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKService.swift; sourceTree = "<group>"; };
+		812391B12014B011006C6B1E /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				812391AE20149440006C6B1E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +52,7 @@
 			children = (
 				8123918F20148592006C6B1E /* Notes */,
 				8123918E20148592006C6B1E /* Products */,
+				812391AC20149440006C6B1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,7 @@
 		8123918F20148592006C6B1E /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				812391AB2014942A006C6B1E /* Notes.entitlements */,
 				812391A6201486CE006C6B1E /* Model */,
 				812391A5201486C0006C6B1E /* View */,
 				812391A4201486BA006C6B1E /* Controller */,
@@ -71,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				812391A920148A03006C6B1E /* AlertService.swift */,
+				812391AF20149576006C6B1E /* CKService.swift */,
+				812391B12014B011006C6B1E /* NotesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -100,6 +112,14 @@
 				812391A720148950006C6B1E /* Note.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		812391AC20149440006C6B1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				812391AD20149440006C6B1E /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +155,14 @@
 					8123918C20148592006C6B1E = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -176,6 +204,8 @@
 			files = (
 				8123919320148592006C6B1E /* ViewController.swift in Sources */,
 				8123919120148592006C6B1E /* AppDelegate.swift in Sources */,
+				812391B020149576006C6B1E /* CKService.swift in Sources */,
+				812391B22014B011006C6B1E /* NotesService.swift in Sources */,
 				812391AA20148A03006C6B1E /* AlertService.swift in Sources */,
 				812391A820148950006C6B1E /* Note.swift in Sources */,
 			);
@@ -314,7 +344,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35J8B947ET;
 				INFOPLIST_FILE = Notes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RB.Notes;
@@ -328,7 +360,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35J8B947ET;
 				INFOPLIST_FILE = Notes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RB.Notes;

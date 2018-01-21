@@ -16,10 +16,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        getNotes()
     }
 
+    func getNotes() {
+        NotesService.getNotes { (notes) in
+            self.notes = notes
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func onComposeTapped() {
         AlertService.composeNote(in: self) { (note) in
+            CKService.shared.save(record: note.noteRecord())
             self.insert(note: note)
         }
     }
