@@ -10,6 +10,8 @@
 		8101358F20106CEF00FE362F /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8101358E20106CEF00FE362F /* AlertService.swift */; };
 		810135912010A9D600FE362F /* CLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810135902010A9D600FE362F /* CLService.swift */; };
 		8101359320111DCE00FE362F /* NotificationAttachmentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8101359220111DCE00FE362F /* NotificationAttachmentID.swift */; };
+		812391812013380F006C6B1E /* NotificationActionID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391802013380F006C6B1E /* NotificationActionID.swift */; };
+		81239183201346FC006C6B1E /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81239182201346FC006C6B1E /* NotificationCategory.swift */; };
 		818EE28C200D24A000FBFADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE28B200D24A000FBFADC /* AppDelegate.swift */; };
 		818EE28E200D24A000FBFADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE28D200D24A000FBFADC /* ViewController.swift */; };
 		818EE291200D24A000FBFADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EE28F200D24A000FBFADC /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 		8101358E20106CEF00FE362F /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		810135902010A9D600FE362F /* CLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLService.swift; sourceTree = "<group>"; };
 		8101359220111DCE00FE362F /* NotificationAttachmentID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAttachmentID.swift; sourceTree = "<group>"; };
+		812391802013380F006C6B1E /* NotificationActionID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationActionID.swift; sourceTree = "<group>"; };
+		81239182201346FC006C6B1E /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		818EE288200D24A000FBFADC /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818EE28B200D24A000FBFADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818EE28D200D24A000FBFADC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				8101359220111DCE00FE362F /* NotificationAttachmentID.swift */,
+				812391802013380F006C6B1E /* NotificationActionID.swift */,
+				81239182201346FC006C6B1E /* NotificationCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 				818EE2AD200E6E6100FBFADC /* UNService.swift in Sources */,
 				818EE28C200D24A000FBFADC /* AppDelegate.swift in Sources */,
 				8101358F20106CEF00FE362F /* AlertService.swift in Sources */,
+				812391812013380F006C6B1E /* NotificationActionID.swift in Sources */,
+				81239183201346FC006C6B1E /* NotificationCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
