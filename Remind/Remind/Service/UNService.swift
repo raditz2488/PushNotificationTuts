@@ -129,6 +129,9 @@ extension UNService: UNUserNotificationCenterDelegate {
     //This is called when user touches the presented alert for notification, or a button on the notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("UN did receive response")
+        if let action = NotificationActionID(rawValue: response.actionIdentifier) {
+            NotificationCenter.default.post(name: Notification.Name("internalNotification.handleAction"), object: action)
+        }
         completionHandler()
     }
     
