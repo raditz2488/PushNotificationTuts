@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -15,8 +16,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        CKService.shared.subscribe()
         getNotes()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleFetch(_:)),
+                                               name: NSNotification.Name("internalNotification.fetchedRecord"),
+                                               object: nil)
+    }
+    
+    @objc
+    func handleFetch(_ sender: Notification) {
+        guard let record = sender.object as? CKRecord, let note = Note(record: record) else { return }
+        insert(note: note)
     }
 
     func getNotes() {
