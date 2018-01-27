@@ -19,6 +19,5 @@ class NotesService {
             }
             completion(notes)
         }
-        
     }
 }

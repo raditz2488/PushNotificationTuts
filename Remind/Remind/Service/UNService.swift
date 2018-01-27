@@ -67,7 +67,7 @@ class UNService: NSObject {
             content.attachments = [attachment]
         }
         //Repeat can happen only if timeInterval is >= 60
-        //Kylo Loko also says that if interval is < 60 and we set reapts to true it will crash(TBC)
+        //Kylo Loko also says that if interval is < 60 and we set repeats to true it will crash(TBC)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
         let request = UNNotificationRequest(identifier: "userNotification.timer",
                                             content: content,
@@ -107,21 +107,27 @@ class UNService: NSObject {
     }
     
     func notificationAttachment(for id: NotificationAttachmentID) -> UNNotificationAttachment? {
-        var imageName: String
+        var fileName: String
+        var fileExtension: String
         switch id {
-        case .timer: imageName = "TimeAlert"
-        case .date: imageName = "DateAlert"
-        case .location: imageName = "LocationAlert"
+        case .timer:
+            fileName = "TimeAlert"
+            fileExtension = "png"
+        case .date:
+            fileName = "DateAlert"
+            fileExtension = "png"
+        case .location:
+            fileName = "LocationAlert"
+            fileExtension = "png"
         }
         
-        guard let url = Bundle.main.url(forResource: imageName, withExtension: "png") else { return nil }
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else { return nil }
         do {
             let attachment = try UNNotificationAttachment(identifier: id.rawValue, url: url, options: [:])
             return attachment
         } catch {
             return nil
         }
-        return nil
     }
 }
 
@@ -135,7 +141,7 @@ extension UNService: UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    //This is called when the app is in foreground and the notification is about to be shown
+    //This is called when the app is in foreground and the notification is about to be shown. Point to be noted is that its called only when in "FOREGROUND".
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("UN WILL present")
         let options: UNNotificationPresentationOptions = [.alert, .sound]

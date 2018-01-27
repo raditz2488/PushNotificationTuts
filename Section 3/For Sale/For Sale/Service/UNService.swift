@@ -1,46 +1,47 @@
 //
 //  UNService.swift
-//  Notes
+//  For Sale
 //
-//  Created by pranav on 21/01/18.
+//  Created by pranav on 27/01/18.
 //  Copyright © 2018 RB. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 
+//We subclass NSObject as we want it to be delegate of UNUserNotificationCenter
 class UNService: NSObject {
-    override private init() {}
+    private override init() {}
     static let shared = UNService()
-    
     let unCenter = UNUserNotificationCenter.current()
     
-    func atuhorize() {
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+    func authorize() {
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         unCenter.requestAuthorization(options: options) { (granted, error) in
-            print(error ?? "No UN authorization error")
+            print(error ?? "No un authorization error")
             guard granted else { return }
-            self.configure()
+            DispatchQueue.main.async {
+                self.configure()
+            }
         }
     }
     
     func configure() {
         unCenter.delegate = self
+        let application = UIApplication.shared
+        application.registerForRemoteNotifications()
     }
 }
 
 extension UNService: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("UN did receive")
-        CKService.shared.handleNotification(with: response.notification.request.content.userInfo)
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("UN will present")
-        CKService.shared.handleNotification(with: notification.request.content.userInfo)
-        let presentationOptions: UNNotificationPresentationOptions = [.alert, .sound, .badge]
-        completionHandler(presentationOptions)
-        
+        let options: UNNotificationPresentationOptions = [.alert, .sound]
+        completionHandler(options)
     }
 }
