@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Messages
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("Did register for notifications")
+        print(Messaging.messaging().fcmToken)
     }
 
 }
