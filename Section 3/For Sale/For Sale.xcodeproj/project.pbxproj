@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810266BA201C9CA70037506C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 810266B9201C9CA70037506C /* GoogleService-Info.plist */; };
+		810266BC201CA0300037506C /* FIRDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810266BB201CA0300037506C /* FIRDatabaseService.swift */; };
 		812391C5201B7449006C6B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391C4201B7449006C6B1E /* AppDelegate.swift */; };
 		812391C7201B7449006C6B1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391C6201B7449006C6B1E /* ViewController.swift */; };
 		812391CA201B7449006C6B1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812391C8201B7449006C6B1E /* Main.storyboard */; };
@@ -16,9 +18,14 @@
 		812391DF201B7B71006C6B1E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391DE201B7B71006C6B1E /* ProductCell.swift */; };
 		812391E1201B8542006C6B1E /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391E0201B8542006C6B1E /* AlertService.swift */; };
 		812391E3201C6BA2006C6B1E /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812391E2201C6BA2006C6B1E /* UNService.swift */; };
+		9D41E440B8837E2C9885AFCA /* Pods_For_Sale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0546667DF8E88FBC28725401 /* Pods_For_Sale.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0546667DF8E88FBC28725401 /* Pods_For_Sale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_For_Sale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16BFCE47262D3563E2DB9751 /* Pods-For Sale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-For Sale.release.xcconfig"; path = "Pods/Target Support Files/Pods-For Sale/Pods-For Sale.release.xcconfig"; sourceTree = "<group>"; };
+		810266B9201C9CA70037506C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		810266BB201CA0300037506C /* FIRDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRDatabaseService.swift; sourceTree = "<group>"; };
 		812391C1201B7449006C6B1E /* For Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "For Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		812391C4201B7449006C6B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		812391C6201B7449006C6B1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +38,7 @@
 		812391E0201B8542006C6B1E /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		812391E2201C6BA2006C6B1E /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		812391E4201C7336006C6B1E /* For Sale.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "For Sale.entitlements"; sourceTree = "<group>"; };
+		CB9F0FDF3661A6C81B8DD0B5 /* Pods-For Sale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-For Sale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-For Sale/Pods-For Sale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +46,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D41E440B8837E2C9885AFCA /* Pods_For_Sale.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24AF8433886A2675D7C675E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB9F0FDF3661A6C81B8DD0B5 /* Pods-For Sale.debug.xcconfig */,
+				16BFCE47262D3563E2DB9751 /* Pods-For Sale.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E5C42728BF9B5A621437F32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0546667DF8E88FBC28725401 /* Pods_For_Sale.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		812391B8201B7449006C6B1E = {
 			isa = PBXGroup;
 			children = (
 				812391C3201B7449006C6B1E /* For Sale */,
 				812391C2201B7449006C6B1E /* Products */,
+				24AF8433886A2675D7C675E7 /* Pods */,
+				6E5C42728BF9B5A621437F32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +97,7 @@
 				812391D7201B7469006C6B1E /* Controller */,
 				812391D6201B7462006C6B1E /* Service */,
 				812391D0201B7449006C6B1E /* Info.plist */,
+				810266B9201C9CA70037506C /* GoogleService-Info.plist */,
 			);
 			path = "For Sale";
 			sourceTree = "<group>";
@@ -78,6 +107,7 @@
 			children = (
 				812391E0201B8542006C6B1E /* AlertService.swift */,
 				812391E2201C6BA2006C6B1E /* UNService.swift */,
+				810266BB201CA0300037506C /* FIRDatabaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -117,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 812391D3201B7449006C6B1E /* Build configuration list for PBXNativeTarget "For Sale" */;
 			buildPhases = (
+				1CB6F243D8B6060A3ADB9001 /* [CP] Check Pods Manifest.lock */,
 				812391BD201B7449006C6B1E /* Sources */,
 				812391BE201B7449006C6B1E /* Frameworks */,
 				812391BF201B7449006C6B1E /* Resources */,
+				D340D7F9BF7FFED580FBFC91 /* [CP] Embed Pods Frameworks */,
+				D083B2DBFE39F84C914C8F5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				812391CF201B7449006C6B1E /* LaunchScreen.storyboard in Resources */,
+				810266BA201C9CA70037506C /* GoogleService-Info.plist in Resources */,
 				812391CC201B7449006C6B1E /* Assets.xcassets in Resources */,
 				812391CA201B7449006C6B1E /* Main.storyboard in Resources */,
 			);
@@ -185,12 +219,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CB6F243D8B6060A3ADB9001 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-For Sale-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D083B2DBFE39F84C914C8F5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-For Sale/Pods-For Sale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D340D7F9BF7FFED580FBFC91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-For Sale/Pods-For Sale-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-For Sale/Pods-For Sale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		812391BD201B7449006C6B1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				812391E3201C6BA2006C6B1E /* UNService.swift in Sources */,
+				810266BC201CA0300037506C /* FIRDatabaseService.swift in Sources */,
 				812391C7201B7449006C6B1E /* ViewController.swift in Sources */,
 				812391DF201B7B71006C6B1E /* ProductCell.swift in Sources */,
 				812391C5201B7449006C6B1E /* AppDelegate.swift in Sources */,
@@ -330,6 +425,7 @@
 		};
 		812391D4201B7449006C6B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB9F0FDF3661A6C81B8DD0B5 /* Pods-For Sale.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "For Sale/For Sale.entitlements";
@@ -347,6 +443,7 @@
 		};
 		812391D5201B7449006C6B1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16BFCE47262D3563E2DB9751 /* Pods-For Sale.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "For Sale/For Sale.entitlements";
